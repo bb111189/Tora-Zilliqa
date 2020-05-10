@@ -20,6 +20,10 @@ class Units:
 
 
 class Qa(int):
+    def __str__(self):
+        fmt_str = Units.fmt.format(float(self))
+        return fmt_str.rstrip("0").rstrip(".")
+
     def __repr__(self):
         return "{} Qa".format(int(self))
 
