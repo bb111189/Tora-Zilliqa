@@ -49,7 +49,7 @@ def commit_swap_hash_test(swap_request_id, user_addr, tx_hash, gas_price, gas_li
         Contract.value_dict("tx_hash", "String", tx_hash),
         Contract.value_dict("gas_price", "Uint128", gas_price),
         Contract.value_dict("gas_limit", "Uint128", gas_limit)
-    ], amount=20)
+    ], amount=50, gas_price=gas_price, gas_limit=gas_limit)
     if resp['receipt']['success']:
         event_logs = resp['receipt']['event_logs']
         if event_logs[0]['_eventname'] == 'verifyrequest':
